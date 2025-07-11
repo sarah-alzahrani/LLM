@@ -1,0 +1,20 @@
+Generate an RML mapping to convert a CSV file of Irish county boundaries into RDF. Each row in the CSV file contains county ID, a county name, a province name, and geometry coordinates. 
+
+Metadata:
+- Stakeholder Name: Ordnance Survey Ireland
+- Role: Data provider
+- Purpose: Publish administrative boundaries as linked geodata
+- Mapping Type: CSV to RDF (RML)
+- Mapping Domain: Geospatial / Administrative
+- Input Description: CSV file with county ID, name, province name and geometry coordinates.
+- Input Name: counties.csv
+- Input Creator: Ordnance Survey Ireland
+- Input Format: CSV
+- Final Design Decisions: Use rdfs:label, schema:latitude, schema:longitude, and schema:addressRegion to represent the attributes
+- Justification: Align with schema.org and LinkedGeoData best practices
+- Quality Metrics: All 32 counties covered, valid spatial attributes
+- Publisher Source: https://data.gov.ie/dataset/counties-national-statutory-boundaries-20191
+- Version Number: 1.0
+- Version Date/Time: 2025-06-04
+- Output Format: Turtle (.ttl)
+- Output Syntax: RML 
