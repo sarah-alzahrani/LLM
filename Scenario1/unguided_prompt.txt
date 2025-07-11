@@ -1,0 +1,1 @@
+Generate an RML mapping to convert a CSV file of Irish county boundaries into RDF. Each row in the CSV file contains county ID, a county name, a province name, and geometry coordinates. 
