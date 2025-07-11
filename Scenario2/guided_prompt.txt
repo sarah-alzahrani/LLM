@@ -1,0 +1,19 @@
+Generate an RML mapping to convert a JSON file of population statistics per NUTS 3 region into RDF. Each record includes a region ID, region name, year, and population value. 
+Metadata:
+- Stakeholder Name: Central Statistics Office
+- Role: Data provider
+- Purpose: Publish regional population data as structured RDF
+- Mapping Type: JSON to RDF (RML)
+- Mapping Domain: Demographics / Statistics
+- Input Description: JSON dataset with region identifiers, years, and population counts
+- Input Name: population.json
+- Input Creator: Central Statistics Office
+- Input Format: JSON
+- Final Design Decisions: Use dcterms:spatial, dcterms:temporal, and xsd:integer for semantic accuracy
+- Justification: Conform to common vocabularies in population data modeling
+- Quality Metrics: Coverage of all NUTS 3 regions, accurate representation of yearly counts
+- Publisher Source: https://data.gov.ie/dataset/g0421-population-per-nuts-3-region
+- Version Number: 1.0
+- Version Date/Time: 2025-06-04
+- Output Format: Turtle (.ttl)
+- Output Syntax: RML 
