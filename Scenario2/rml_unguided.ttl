@@ -1,0 +1,27 @@
+\[rml:logicalSource
+    [
+        rml:source "population_statistics.json";
+        rml:referenceFormulation ql:JSONPath;
+        rml:iterator "$.records";
+    ];
+    rml:subjectMap
+        [
+            rml:template "http://example.org/region/{region_id}";
+            rr:class ex:Region;
+        ];
+    rml:predicateObjectMap
+        [
+            rml:predicate ex:hasName;
+            rml:objectMap [ rml:reference "region_name" ];
+        ];
+    rml:predicateObjectMap
+        [
+            rml:predicate ex:hasYear;
+            rml:objectMap [ rml:reference "year" ];
+        ];
+    rml:predicateObjectMap
+        [
+            rml:predicate ex:hasPopulation;
+            rml:objectMap [ rml:reference "population_value" ];
+        ];
+\]
