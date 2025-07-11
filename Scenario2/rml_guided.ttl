@@ -1,0 +1,51 @@
+<#PopulationMapping>
+    rml:logicalSource [
+        rml:source "population.json";
+        rml:referenceFormulation ql:JSONPath;
+        rml:iterator "$.regions[*]"
+    ];
+    rml:subjectMap [
+        rml:reference "http://example.org/region/{regionId}";
+        rr:class ex:Region
+    ];
+    rml:predicateObjectMap [
+        rml:predicate ex:regionName;
+        rml:objectMap [
+            rml:reference "regionName"
+        ]
+    ];
+    rml:predicateObjectMap [
+        rml:predicate dcterms:spatial;
+        rml:objectMap [
+            rml:reference "http://data.europa.eu/nuts/{regionId}"
+        ]
+    ];
+    rml:predicateObjectMap [
+        rml:predicate dcterms:temporal;
+        rml:objectMap [
+            rml:reference "year"
+        ]
+    ];
+    rml:predicateObjectMap [
+        rml:predicate ex:population;
+        rml:objectMap [
+            rml:reference "populationValue";
+            rr:datatype xsd:integer
+        ]
+    ].
+
+<#MetadataGraph>
+    a void:Dataset;
+    dcterms:publisher "Central Statistics Office";
+    dcterms:creator "Central Statistics Office";
+    dcterms:description "Publish regional population data as structured RDF";
+    void:inDataset <https://data.gov.ie/dataset/g0421-population-per-nuts-3-region>;
+    void:sparqlEndpoint <https://data.gov.ie/sparql>;
+    dcterms:title "Regional Population Data";
+    dcterms:source <https://data.gov.ie/dataset/g0421-population-per-nuts-3-region>;
+    dcterms:format "application/json";
+    dcterms:spatial <http://sws.geonames.org/10219144/>;
+    dcterms:subject <http://purl.org/dc/terms/Demographics> ;
+    dcterms:temporal "2025-06-04"^^xsd:dateTime;
+    void:exampleResource <http://example.org/region/123>;
+    void:version "1.0".
