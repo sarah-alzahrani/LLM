@@ -1,0 +1,1 @@
+Generate an RML mapping to convert a CSV file of Irish electoral divisions into RDF. Each row includes an electoral division ID, division name, county, province, and coordinates. Construct hierarchical URIs using ED_ID and model containment relationships between electoral divisions, counties, and provinces.
